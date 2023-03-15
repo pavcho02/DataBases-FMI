@@ -8,8 +8,8 @@ WHERE price < 1200;
 
 /*
 SELECT DISTINCT maker 
-FROM product
-WHERE type = 'Printer';
+FROM product, printer
+WHERE product.type = 'Printer' AND printer.model = product.model;
 */
 
 /*

@@ -36,11 +36,13 @@ WHERE price > ALL (SELECT price FROM pc WHERE P.price < price))) AS T ORDER BY T
 /*
 SELECT maker
 FROM printer AS pr, product
-WHERE color = 'y' AND product.type = 'Printer' AND pr.model = product.model AND price < ALL ( SELECT price FROM printer WHERE color = 'y' AND pr.price > price);
+WHERE color = 'y' AND product.type = 'Printer' AND pr.model = product.model 
+AND price < ALL ( SELECT price FROM printer WHERE color = 'y' AND pr.price > price);
 */
 
 /*
 SELECT DISTINCT maker
 FROM product, pc AS p
-WHERE type = 'PC' AND p.model = product.model AND ram < ALL ( SELECT ram FROM pc WHERE p.ram > ram AND speed > ALL ( SELECT speed FROM pc AS p2 WHERE speed < p2.speed )) ;
+WHERE type = 'PC' AND p.model = product.model 
+AND ram < ALL ( SELECT ram FROM pc WHERE p.ram > ram AND speed > ALL ( SELECT speed FROM pc AS p2 WHERE speed < p2.speed )) ;
 */
